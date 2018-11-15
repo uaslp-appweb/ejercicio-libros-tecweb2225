@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  ruteador: Router;
+
+  constructor(unRuteador: Router) {
+    this.ruteador = unRuteador;
+  }
 
   ngOnInit() {
+  }
+
+  enviar(): void {
+    // si la información del registro es correcta
+    // entonces navegar al login
+    this.ruteador.navigate(['login']);
   }
 
 }

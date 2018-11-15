@@ -7,6 +7,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { CrearComponent } from './libros/crear/crear.component';
 import { ConsultarComponent } from './libros/consultar/consultar.component';
 import { AppRutas } from './app.rutas';
+import { LlesComponent } from './libros/lles/lles.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppRutas } from './app.rutas';
     LoginComponent,
     RegistroComponent,
     CrearComponent,
-    ConsultarComponent
+    ConsultarComponent,
+    LlesComponent
   ],
   imports: [
     BrowserModule,
