@@ -8,6 +8,9 @@ import { CrearComponent } from './libros/crear/crear.component';
 import { ConsultarComponent } from './libros/consultar/consultar.component';
 import { AppRutas } from './app.rutas';
 import { LlesComponent } from './libros/lles/lles.component';
+import { ServicioLibrosService } from './servicios/servicio-libros.service';
+import { FormsModule } from '@angular/forms';
+import { DetallesComponent } from './libros/detalles/detalles.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,15 @@ import { LlesComponent } from './libros/lles/lles.component';
     RegistroComponent,
     CrearComponent,
     ConsultarComponent,
-    LlesComponent
+    LlesComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,
-    AppRutas
+    AppRutas,
+    FormsModule
   ],
-  providers: [],
+  providers: [ ServicioLibrosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
