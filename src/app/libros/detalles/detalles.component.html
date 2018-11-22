@@ -1,9 +1,11 @@
-<h1>Detalles del libro</h1>
+<div class="container mt-2">
+  <h2>Detalles del libro</h2>
 
-<div *ngIf="libro === undefined">
-  <p>No existe el libro que estas buscando</p>
-</div>
-<div *ngIf="libro !== undefined">
-  <p><strong>Titulo: </strong>{{libro.titulo}} </p>
-  <p><strong>Autor: </strong>{{libro.autor}} </p>
+  <div *ngIf="libro === undefined">
+    <p>No existe el libro que estas buscando</p>
+  </div>
+  <div *ngIf="libro !== undefined">
+    <p><strong>Titulo: </strong>{{ libro.titulo }}</p>
+    <p><strong>Autor: </strong>{{ libro.autor }}</p>
+  </div>
 </div>

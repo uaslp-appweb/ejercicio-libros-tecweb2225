@@ -11,6 +11,7 @@ import { LlesComponent } from './libros/lles/lles.component';
 import { ServicioLibrosService } from './servicios/servicio-libros.service';
 import { FormsModule } from '@angular/forms';
 import { DetallesComponent } from './libros/detalles/detalles.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetallesComponent } from './libros/detalles/detalles.component';
     CrearComponent,
     ConsultarComponent,
     LlesComponent,
-    DetallesComponent
+    DetallesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

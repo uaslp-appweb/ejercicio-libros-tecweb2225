@@ -1,29 +1,20 @@
-<h1>Consultar Libros</h1>
+<div class="container mt-2">
+  <h2>Consultar Libros</h2>
 
-<table>
-  <tr>
-    <th>Titulo</th>
-    <th>Autor</th>
-    <th></th>
-  </tr>
-  <tr *ngFor="let libro of servicioLibros.getLibros()">
-    <td>{{libro.titulo}}</td>
-    <td>{{libro.autor}}</td>
-    <td><a routerLink="/libro/{{libro.id}}">Detalles</a></td>
-  </tr>
-</table>
-<!-- <ul>
-  <li>
-    <a routerLink="/libro/1">Ver libro 1</a>
-  </li>
-</ul>
-<ul>
-  <li>
-    <a routerLink="/libro/2">Ver libro 2</a>
-  </li>
-</ul>
-<ul>
-  <li>
-    <a routerLink="/libro/3">Ver libro 3</a>
-  </li>
-</ul> -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let libro of servicioLibros.getLibros()">
+        <td>{{ libro.titulo }}</td>
+        <td>{{ libro.autor }}</td>
+        <td><a routerLink="/libro/{{libro.id}}">Detalles</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
