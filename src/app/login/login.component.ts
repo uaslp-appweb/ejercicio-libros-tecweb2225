@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
+import { UsuariosService } from '../servicios/usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -9,17 +11,25 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   ruteador: Router;
 
-  constructor(unRuteador: Router) {
+  constructor(unRuteador: Router, private servicioUsuarios: UsuariosService) {
     this.ruteador = unRuteador;
   }
 
   ngOnInit() {
   }
 
-  entrar(): void {
-    // si el nombre de usuario y contraseña es correcto
-    // entonces navegar a consultar libros
-    this.ruteador.navigate(['libros', 'consultar']);
+  ingresar(form: FormGroup): void {
+    this.servicioUsuarios.logearUsuario(form.value.nomUsuario, form.value.contraseña).subscribe(
+      resultado => {
+        // si el nombre de usuario y contraseña es correcto
+        // entonces navegar a consultar libros
+        console.log(resultado);
+        this.ruteador.navigate(['libros', 'consultar']);
+      },
+      error => {
+        console.log('Error al iniciar sesion ', error);
+      }
+    );
   }
 
 }

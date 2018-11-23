@@ -7,7 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class UsuariosService {
 
-  constructor(private http: HttpClient) { }
+  private token: string;
+
+  constructor(private http: HttpClient) {
+    this.token = null;
+  }
+
+  usuarioLogeado(): boolean {
+    return this.token !== null;
+  }
 
   obtenerUsuarios(): Observable<any> {
     return this.http.get('https://reqres.in/api/users', {
@@ -18,6 +26,22 @@ export class UsuariosService {
       params: {
         page: '3'
       }
+    });
+  }
+
+  registrarUsuario(nombreUsuario: string, contraseña: string)
+  : Observable<any> {
+    return this.http.post('https://reqres.in/api/register', {
+      username: nombreUsuario,
+      password: contraseña
+    });
+  }
+
+  logearUsuario(nombreUsuario: string, contraseña: string)
+  : Observable<any> {
+    return this.http.post('https://reqres.in/api/login', {
+      username: nombreUsuario,
+      password: contraseña
     });
   }
 }
