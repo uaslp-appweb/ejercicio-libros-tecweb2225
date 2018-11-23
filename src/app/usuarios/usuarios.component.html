@@ -1,0 +1,16 @@
+<table *ngIf="usuarios !== undefined" class="table table-striped">
+  <thead>
+    <tr>
+      <td>Nombre</td>
+      <td>Apellido</td>
+      <td>Avatar</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usr of usuarios">
+      <td>{{usr.first_name}}</td>
+      <td>{{usr.last_name}}</td>
+      <td><img src="{{usr.avatar}}"></td>
+    </tr>
+  </tbody>
+</table>

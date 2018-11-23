@@ -12,6 +12,8 @@ import { ServicioLibrosService } from './servicios/servicio-libros.service';
 import { FormsModule } from '@angular/forms';
 import { DetallesComponent } from './libros/detalles/detalles.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     ConsultarComponent,
     LlesComponent,
     DetallesComponent,
-    NavbarComponent
+    NavbarComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
     AppRutas,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ ServicioLibrosService],
   bootstrap: [AppComponent]
