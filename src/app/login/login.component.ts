@@ -24,6 +24,10 @@ export class LoginComponent implements OnInit {
         // si el nombre de usuario y contraseña es correcto
         // entonces navegar a consultar libros
         console.log(resultado);
+
+        this.servicioUsuarios.token = resultado.token;
+        console.log('El token es ', this.servicioUsuarios.token);
+
         this.ruteador.navigate(['libros', 'consultar']);
       },
       error => {

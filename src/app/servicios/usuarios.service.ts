@@ -7,10 +7,18 @@ import { Observable } from 'rxjs';
 })
 export class UsuariosService {
 
-  private token: string;
+  private _token: string;
+
+  get token(): string {
+    return this._token;
+  }
+
+  set token(unToken: string) {
+    this._token = unToken;
+  }
 
   constructor(private http: HttpClient) {
-    this.token = null;
+    this._token = null;
   }
 
   usuarioLogeado(): boolean {
