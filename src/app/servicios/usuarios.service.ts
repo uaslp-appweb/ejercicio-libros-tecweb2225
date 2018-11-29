@@ -10,11 +10,18 @@ export class UsuariosService {
   private _token: string;
 
   get token(): string {
+    if (this._token === null) {
+      this._token = window.localStorage.getItem('token');
+    }
+    // obtener el payload del token
+    // si el tiempo de expiracion > Date.now()
+    //   entonces regresar null
     return this._token;
   }
 
   set token(unToken: string) {
     this._token = unToken;
+    window.localStorage.setItem('token', this._token);
   }
 
   constructor(private http: HttpClient) {
