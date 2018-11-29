@@ -14,6 +14,8 @@ import { DetallesComponent } from './libros/detalles/detalles.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import {HttpClientModule} from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ModalLibrosComponent } from './libros/modal-libros/modal-libros.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +27,18 @@ import {HttpClientModule} from '@angular/common/http';
     LlesComponent,
     DetallesComponent,
     NavbarComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ModalLibrosComponent
   ],
   imports: [
     BrowserModule,
     AppRutas,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [ ServicioLibrosService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalLibrosComponent]
 })
 export class AppModule { }
