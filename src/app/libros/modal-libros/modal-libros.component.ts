@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-modal-libros',
@@ -13,4 +14,8 @@ export class ModalLibrosComponent implements OnInit {
   ngOnInit() {
   }
 
+  enviar(form: FormGroup) {
+    this.modalActivo.dismiss();
+    console.log(form.value.nombre);
+  }
 }
